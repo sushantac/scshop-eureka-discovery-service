@@ -25,20 +25,6 @@ node{
         sh label: '', script: 'docker push sushantac/eureka-discovery-service:0.0.1'
     }
 
-    stage('Run container on Dev server'){
-        try{
-            sh label: '', script: 'docker stop eureka-discovery-service'
-        } catch(all) {
-
-        }
-        
-        try{
-            sh label: '', script: 'docker rm eureka-discovery-service'
-        } catch(all) {
-
-        }
-
-        sh label: '', script: 'docker run -d -p 8012:8012 --name eureka-discovery-service sushantac/eureka-discovery-service:0.0.1'
-    }
+    
     
 }
